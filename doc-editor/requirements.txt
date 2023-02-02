@@ -1,0 +1,10 @@
+myst-parser
+sphinxcontrib-plantuml
+sphinxcontrib-mermaid
+sphinx-jinja
+sphinx
+lxml
+myst-nb
+gitpython
+Jinja2
+pandas
