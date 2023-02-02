@@ -43,7 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/docAsCode
           tags: |
             ${{ needs.tobuildornot.outputs.target_name }}
             ${{ needs.tobuildornot.outputs.target_hash }}
