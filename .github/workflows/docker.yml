@@ -45,8 +45,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/docAsCode
           tags: |
-            ${{ needs.tobuildornot.outputs.target_name }}
-            ${{ needs.tobuildornot.outputs.target_hash }}
+            latest
 
       - name: Build and push Docker image
         id: build-and-push
