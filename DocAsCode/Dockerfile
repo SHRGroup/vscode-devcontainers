@@ -23,7 +23,7 @@ ENV CHROME_BIN="/usr/bin/chromium-browser" \
 RUN npm install -g chromium @mermaid-js/mermaid-cli
 COPY --from=mermaid /puppeteer-config.json /puppeteer-config.json
 
-RUN apt-get install -y openjdk-19-jre-headless
+RUN apt-get install -y openjdk-19-jre-headless graphviz
 COPY --from=plantuml /opt/plantuml.jar /bin/plantuml.jar 
 
 ARG USERNAME=vscode
