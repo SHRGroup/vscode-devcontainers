@@ -5,7 +5,7 @@ FROM ubuntu
 RUN apt-get update
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y sudo git curl bash 
+RUN apt-get install -y sudo git git-lfs curl bash 
 
 RUN apt-get install -y texlive-full python3 pip
 ADD requirements.txt /python-dependencies.txt 
