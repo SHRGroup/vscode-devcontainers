@@ -13,7 +13,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r  /python-dependencies.txt 
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash 
-RUN apt-get install -y nodejs chromium-bsu
+RUN apt-get install -y nodejs chromium-bsu chromium-browser
 RUN npm install -g npm@latest
 ENV CHROME_BIN="/usr/bin/chromium-browser" \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true" \
