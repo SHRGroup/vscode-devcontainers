@@ -14,7 +14,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r  /python-dependencies.txt
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash
-RUN apt-get install -y nodejs 
+RUN apt-get install -y --no-install-recommends nodejs 
 RUN npm install -g npm@latest
 ENV CHROME_BIN="/usr/bin/chromium-browser" \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true" \
@@ -22,11 +22,11 @@ ENV CHROME_BIN="/usr/bin/chromium-browser" \
     CHROMIUM_USER_FLAGS="--no-sandbox"
 
 RUN add-apt-repository ppa:savoury1/chromium
-RUN apt install chromium-browser
+RUN apt-get install -y --no-install-recommends chromium-browser
 RUN npm install -g chromium @mermaid-js/mermaid-cli
 COPY --from=mermaid /puppeteer-config.json /puppeteer-config.json
 
-RUN apt-get install -y openjdk-19-jre-headless graphviz
+RUN apt-get install -y --no-install-recommends openjdk-19-jre-headless graphviz
 COPY --from=plantuml /opt/plantuml.jar /bin/plantuml.jar
 
 ARG USERNAME=vscode
